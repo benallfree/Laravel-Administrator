@@ -93,6 +93,13 @@ Route::group(array('prefix' => Config::get('administrator::administrator.uri'), 
 			'uses' => 'Frozennode\Administrator\AdminController@displayFile'
 		));
 
+
+		//File Uploads
+		Route::post('{model}/{field}/file_upload', array(
+			'as' => 'admin_file_upload',
+			'uses' => 'Frozennode\Administrator\AdminController@fileUpload'
+		));
+
 		//Updating Rows Per Page
 		Route::post('{model}/rows_per_page', array(
 			'as' => 'admin_rows_per_page',
